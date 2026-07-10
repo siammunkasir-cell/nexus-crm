@@ -1,4 +1,4 @@
-const API_BASE = process.env.NEXT_PUBLIC_APP_URL || "";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "";
 
 export interface PipelineStage {
   id: string;
