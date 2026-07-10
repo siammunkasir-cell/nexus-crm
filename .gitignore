@@ -1,0 +1,29 @@
+node_modules/
+dist/
+.next/
+*.db
+*.db-journal
+.env
+.env.local
+.env.production
+!.env.example
+
+# Prisma
+apps/api/src/prisma/migrations/
+
+# Turbo
+.turbo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

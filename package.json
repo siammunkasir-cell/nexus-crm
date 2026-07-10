@@ -1,0 +1,29 @@
+{
+  "name": "nexus-crm",
+  "private": true,
+  "version": "1.0.0",
+  "description": "NEXUS CRM — AI-powered multi-tenant SaaS CRM platform",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "clean": "turbo clean",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "db:generate": "pnpm --filter @nexus/api prisma generate",
+    "db:push": "pnpm --filter @nexus/api prisma db push",
+    "db:migrate": "pnpm --filter @nexus/api prisma migrate dev",
+    "db:seed": "pnpm --filter @nexus/api prisma db seed",
+    "typecheck": "turbo typecheck"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.15.4",
+  "devDependencies": {
+    "dotenv": "^17.4.2",
+    "prettier": "^3.4.0",
+    "turbo": "^2.3.0",
+    "typescript": "^5.7.0"
+  }
+}

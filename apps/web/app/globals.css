@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-nexus-border;
+  }
+
+  body {
+    @apply bg-nexus-bg text-nexus-text-primary font-display antialiased;
+  }
+
+  ::selection {
+    @apply bg-nexus-accent-primary/20 text-nexus-text-primary;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    @apply w-1.5 h-1.5;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-nexus-text-muted rounded-full hover:bg-nexus-text-secondary transition-colors;
+  }
+
+  /* Focus ring */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-nexus-accent-primary/50 ring-offset-2 ring-offset-nexus-bg;
+  }
+}
+
+@layer components {
+  /* Glow card — used for dashboard cards, detail panels */
+  .nexus-card {
+    @apply bg-nexus-surface border border-nexus-border rounded-lg transition-all duration-150;
+  }
+
+  .nexus-card:hover {
+    @apply border-nexus-accent-primary/20;
+  }
+
+  .nexus-card-glow {
+    @apply nexus-card hover:shadow-glow;
+  }
+
+  /* Primary button */
+  .nexus-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md
+           bg-nexus-accent-primary text-white font-medium text-sm
+           hover:bg-nexus-accent-primary/90 active:bg-nexus-accent-primary/80
+           transition-all duration-150 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  /* Secondary button */
+  .nexus-btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md
+           bg-nexus-surface border border-nexus-border text-nexus-text-primary font-medium text-sm
+           hover:bg-nexus-surface-hover active:bg-nexus-surface/80
+           transition-all duration-150 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  /* Ghost button */
+  .nexus-btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-2 rounded-md
+           text-nexus-text-secondary font-medium text-sm
+           hover:bg-nexus-surface-hover hover:text-nexus-text-primary
+           transition-all duration-150;
+  }
+
+  /* Input field */
+  .nexus-input {
+    @apply w-full px-3 py-2 rounded-md bg-nexus-surface border border-nexus-border
+           text-nexus-text-primary text-sm placeholder:text-nexus-text-muted
+           focus:outline-none focus:border-nexus-accent-primary/50 focus:ring-1 focus:ring-nexus-accent-primary/25
+           transition-all duration-150;
+  }
+
+  /* Badge */
+  .nexus-badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .nexus-badge-primary {
+    @apply nexus-badge bg-nexus-accent-primary/10 text-nexus-accent-primary;
+  }
+
+  .nexus-badge-success {
+    @apply nexus-badge bg-nexus-success/10 text-nexus-success;
+  }
+
+  .nexus-badge-warning {
+    @apply nexus-badge bg-nexus-warning/10 text-nexus-warning;
+  }
+
+  .nexus-badge-danger {
+    @apply nexus-badge bg-nexus-danger/10 text-nexus-danger;
+  }
+
+  .nexus-badge-ai {
+    @apply nexus-badge bg-nexus-ai/10 text-nexus-ai;
+  }
+
+  /* AI element styling — all AI-related UI uses cyan accent */
+  .nexus-ai-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium
+           bg-nexus-ai/10 text-nexus-ai border border-nexus-ai/20;
+  }
+
+  .nexus-ai-glow {
+    @apply shadow-glow-cyan;
+  }
+
+  /* Section heading */
+  .nexus-section-title {
+    @apply text-sm font-semibold text-nexus-text-muted uppercase tracking-wider;
+  }
+
+  /* Skeleton loading */
+  .nexus-skeleton {
+    @apply bg-nexus-surface-hover rounded-md animate-pulse;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-nexus-accent-primary to-nexus-accent-secondary bg-clip-text text-transparent;
+  }
+
+  .glow-indigo {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+  }
+}
