@@ -19,7 +19,7 @@ services:
         value: nexus-refresh-secret-prod-2026
       - key: CORS_ORIGIN
         value: https://nexus-crm-web.onrender.com
-      - key: DEEPSEEK_API_KEY
+      - key: OPeNCODE_API_KEY
         sync: false
 
   # Web Frontend
